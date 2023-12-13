@@ -156,3 +156,12 @@ champi2$Season[champi2$Season=="s"]<-"Spring"
 champi2$Season[champi2$Season=="u"]<-"Summer"
 
 champi2$Season<-as.factor(champi2$Season)
+
+
+#adding a column named Class Height
+champi2$`Class Height`<-cut(champi2$`Stem Height (m)`, breaks = c(-1, 4.480, 6.890, 30), labels = c("Short", "Medium",
+                                                                                          "Tall"))
+table(champi2$`Class Height`)
+summary(champi2$`Class Height`)
+
+write.csv(champi2, "champi_clean.csv", row.names=TRUE)
