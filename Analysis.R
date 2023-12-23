@@ -10,9 +10,17 @@ hist(champi2$`Stem Height (m)`,
      breaks = 20,
      col = "lightblue", border = "blue")
 
+
 mean(champi2$`Stem Height (m)`)
 quantile(champi2$`Stem Height (m)`)
+
+#variance
+sigmasquared<-mean(champi2$`Stem Height (m)`^2)-mean(champi2$`Stem Height (m)`)^2
+
+#standard deviation <- sigma
+sigma<-sqrt(sigmasquared)
 sd(champi2$`Stem Height (m)`)
+sigma
 
 ############################ GILL COLOR ####################################
 ##changing colors
